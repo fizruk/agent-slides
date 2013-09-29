@@ -1,0 +1,8 @@
+*.pdf
+*.toc
+*.aux
+*.fdb_latexmk
+*.log
+*.nav
+*.out
+*.snm
