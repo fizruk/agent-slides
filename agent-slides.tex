@@ -5,8 +5,17 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
-\usetheme{Warsaw}
+\usetheme{Boadilla}
+\usecolortheme{seahorse}
 \setbeamercovered{transparent}% Allow for shaded (transparent) covered items
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Содержание}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 
 \begin{document}
 
@@ -27,7 +36,7 @@
 \section{Агенты}
 
 \begin{frame}
-\frametitle{Что такое агент?}
+  \frametitle{Что такое агент?}
   Агенты часто используются в области ИИ при разработке систем.
   Тем не менее, до сих пор не существует устоявшегося понятия.
 
@@ -43,7 +52,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Общее понятие}
+  \frametitle{Общее понятие}
   В самом общем случае агент обычно представляет нечто, обладающее
   следующими свойствами:
 
@@ -57,7 +66,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Ментальность}
+  \frametitle{Ментальность}
   Распространено использование ментальных характеристик:
 
   \begin{itemize}
@@ -71,7 +80,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Прочие свойства}
+  \frametitle{Прочие свойства}
   Часто также обсуждаются следующие свойства агентов:
 
   \begin{itemize}
@@ -85,7 +94,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Концепции агентов}
+  \frametitle{Концепции агентов}
   Существует ряд формальных теорий, описывающих агентов:
 
   \begin{itemize}
@@ -104,7 +113,7 @@
 \section{Распределенная оптимизация}
 
 \begin{frame}
-\frametitle{Сенсорная сеть}
+  \frametitle{Сенсорная сеть}
   \begin{columns}[c]
     \column{.5\textwidth}
     \begin{itemize}
@@ -120,7 +129,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Раскраска графа}
+  \frametitle{Раскраска графа}
   \begin{columns}[c]
     \column{.5\textwidth}
     \begin{itemize}
@@ -136,7 +145,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Задачи с ограничениями}
+  \frametitle{Задачи с ограничениями}
   Распределенная задача \alt<2>{\alert{оптимизации}}{с ограничениями}:
   \begin{itemize}
     \item множество переменных (сенсор, вершина);
@@ -151,8 +160,67 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Распределенные алгоритмы}
-  
+  \frametitle{Распределенные алгоритмы}
+  Подходы к решению:
+
+  \begin{itemize}
+    \item адаптация классических решений (не распределенных);
+    \item адаптация алгоритмов локального поиска;
+    \item кооперативные подходы.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Асинхронный перебор (ABT)}
+  Каждый агент отвечает за одну переменную и предлагает другим агентам принять значение,
+  которое он выбрал.
+  \begin{itemize}
+    \item ABT ~--- полный алгоритм;
+    \item глобальное упорядочивание агентов;
+    \item нет процедуры останова (но она легко добавляется);
+    \item хорошо масштабируется.
+  \end{itemize}
+
+  Расширения:
+  \begin{itemize}
+    \item изменение порядка при конфликтах (AWCS);
+    \item решение задачи оптимизации (ADOPT, APO);
+    \item динамическое добавление агентов (DynAPO).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Распределенный локальный поиск}
+  Алгоритмы распределенного поиска исследуют возможные изменения состояния:
+  \begin{itemize}
+    \item всегда стремятся улучшить состояние (уменьшить количество конфликтов);
+    \item естественным образом поддерживают динамику (добавление ограничений, агентов);
+    \item эффективны по времени;
+    \item не полны и требуют настройки параметров.
+  \end{itemize}
+
+  Известные алгоритмы:
+  \begin{itemize}
+    \item Tabu search;
+    \item Simulated annealing;
+    \item Iterative Breakout method.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Алгоритмы популяций}
+  Популяция ~--- это набор индивидуальных агентов.
+  \begin{itemize}
+    \item агент знает целиком исходную задачу (и может решить сам);
+    \item агенты координируются для нахождения решения.
+  \end{itemize}
+
+  Известные алгоритмы:
+  \begin{itemize}
+    \item эволюционные и генетические алгоритмы;
+    \item Particle Swarm Optimization (PSO);
+    \item Ant Colony Optimization (ACO).
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{}
