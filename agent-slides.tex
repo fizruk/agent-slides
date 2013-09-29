@@ -101,6 +101,60 @@
   \end{itemize}
 \end{frame}
 
+\section{Распределенная оптимизация}
+
+\begin{frame}
+\frametitle{Сенсорная сеть}
+  \begin{columns}[c]
+    \column{.5\textwidth}
+    \begin{itemize}
+      \item каждый сенсор может выбрать 1 из 3 частот
+      \item пересекающиеся сенсоры не должны иметь одну частоту
+    \end{itemize}
+
+    \column{.5\textwidth}
+    \begin{figure}
+       \includegraphics[width=5cm]{images/sensors.jpg}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Раскраска графа}
+  \begin{columns}[c]
+    \column{.5\textwidth}
+    \begin{itemize}
+      \item каждая вершина может быть раскрашена в один из трех цветов
+      \item смежные вершины должны быть раскрашены в разные цвета
+    \end{itemize}
+
+    \column{.5\textwidth}
+    \begin{figure}
+       \includegraphics[width=5cm]{images/graph-coloring.jpg}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Задачи с ограничениями}
+  Распределенная задача \alt<2>{\alert{оптимизации}}{с ограничениями}:
+  \begin{itemize}
+    \item множество переменных (сенсор, вершина);
+    \item множества возможных значений для каждой переменной (частота, цвет);
+    \item множество ограничений (перекающиеся сенсоры, смежные вершины);
+    \item распределение переменных по агентам (обычно одна переменная на агента);
+    \item<2-| alert@2> функция веса для каждого нарушенного ограничения;
+    \item необходимо \alt<2>{\alert{минимизировать сумму весов нарушенных ограничений}}
+      {назначить каждой переменной значение, чтобы ограничения были выполнены}.
+  \end{itemize}
+  \visible<3->{\alert{Задачи с ограничениями в общем случае NP-полные!}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Распределенные алгоритмы}
+  
+\end{frame}
+
 \begin{frame}{}
 \addtocounter{framenumber}{-1}
 \begin{center}
