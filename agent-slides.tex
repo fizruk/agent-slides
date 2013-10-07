@@ -105,6 +105,21 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Многоагентные системы}
+  Многоагентная система (МАС)~--- это система из нескольких взаимодействующих
+  интеллектульных агентов.
+
+  МАС используются для:
+  \begin{itemize}
+    \item регулирования траффика;
+    \item онлайн-торговли;
+    \item моделирования соц. структур;
+    \item для группового ИИ в играх и фильмах;
+    \item для устранения чрезвычайных ситуаций (ЧС) и т.д.
+  \end{itemize}
+\end{frame}
+
 \section{Приложения МАС}
 
 \begin{frame}
@@ -143,7 +158,7 @@
 
 \begin{frame}
   \frametitle{Задачи \alt<5->{оптимизации}{с ограничениями}}
-  \visible<6->{Распределенная задача} \alt<5->{\alert{оптимизации}}{с ограничениями}:
+  \alt<6->{\alert{Распределенная задача}}{Задача} \alt<5->{\alert{оптимизации}}{с ограничениями}:
   \begin{itemize}
     \item<1-> множество переменных (сенсор, вершина);
     \item<2-> множества возможных значений для каждой переменной (частота, цвет);
@@ -158,8 +173,9 @@
 
 \begin{frame}
   \frametitle{Распределенные задачи}
-  Подходы к решению:
+  Задачи ИИ чаще всего можно сформулировать в виде задачи с ограничениями.
 
+  Подходы к решению:
   \begin{itemize}
     \item адаптация классических решений \\ (перебор, нахождение глобального решения);
     \item адаптация алгоритмов локального поиска \\ (нахождение локального решения);
@@ -170,12 +186,12 @@
 \begin{frame}
   \frametitle{Асинхронный перебор}
   \begin{figure}
-    \includegraphics[width=11cm]<1>{images/ABT/ABT01.png}
-    \includegraphics[width=11cm]<2>{images/ABT/ABT02.png}
-    \includegraphics[width=11cm]<3>{images/ABT/ABT03.png}
-    \includegraphics[width=11cm]<4>{images/ABT/ABT04.png}
-    \includegraphics[width=11cm]<5>{images/ABT/ABT05.png}
-    \includegraphics[width=11cm]<6>{images/ABT/ABT06.png}
+    \includegraphics[width=11cm]<+>{images/ABT/ABT01.png}
+    \includegraphics[width=11cm]<+>{images/ABT/ABT02.png}
+    \includegraphics[width=11cm]<+>{images/ABT/ABT03.png}
+    \includegraphics[width=11cm]<+>{images/ABT/ABT04.png}
+    \includegraphics[width=11cm]<+>{images/ABT/ABT05.png}
+    \includegraphics[width=11cm]<+>{images/ABT/ABT06.png}
   \end{figure}
 \end{frame}
 
